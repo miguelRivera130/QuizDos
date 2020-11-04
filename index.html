@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizDos</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div id="creacionDeTarea">
+
+    <h1 id="titulo">Global Solution S.A.S</h1>
+    <input id="descripcion" placeholder="descripción de la actividad" type="text">
+    <button id="saveDescripcion">Nueva Tarea</button>
+    
+
+</div>
+
+<div id="celdas">
+
+<div id="celdaUno">
+
+    <h3 id = "toDo">To do</h3>
+    <canvas></canvas>
+
+</div>
+
+<div id="celdaDos">
+
+    <h3 id="toDo">Doing</h3>
+    <canvas></canvas>
+
+
+</div>
+
+<div id="celdaTres">
+
+    <h3 id="toDo">Done</h3>
+    <canvas></canvas>
+
+
+</div>
+
+</div>
+    
+</body>
+
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUZvg2PteB_6bUXmRcYXLanc0HhGX0k3Q",
+    authDomain: "proyectos-eco.firebaseapp.com",
+    databaseURL: "https://proyectos-eco.firebaseio.com",
+    projectId: "proyectos-eco",
+    storageBucket: "proyectos-eco.appspot.com",
+    messagingSenderId: "369276679024",
+    appId: "1:369276679024:web:8fa46057a30f3d0d8915b5",
+    measurementId: "G-EZP5WS2KWK"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+    class Tarea {
+
+constructor(tareas){
+    
+    this.tareas = tareas;
+    
+}
+
+render = ()=> {
+
+    let component = document.createElement('div');
+    component.className = 'disTareas';
+
+    let listas = document.createElement('div');
+
+    switch(this.tareas.tipo){
+
+        case 'toDo':
+
+            let doTo = document.createElement('div');
+            component.className = 'doTo';
+
+            let actDoTo = document.createElement('div');
+            actDoTo.innerHTML(this.tareas.actividad);
+
+            let buttDel = document.createElement('button');
+            component.className = 'toDoDel';
+            buttDel.innerHTML = 'X';
+
+            let buttMov = document.createElement('button');
+            component.className = 'toDoMov';
+            buttMov.innerHTML = '>';
+
+            doTo.appendChild(actDoTo);
+            doTo.appendChild(buttDel);
+            doTo.appendChild(buttMov);
+
+            break;
+
+        case 'doing':
+            let doing = document.createElement('div');
+            component.className = 'doing';
+
+            let actDoing = document.createElement('div');
+            actDoTo.innerHTML(this.tareas.actividad);
+
+            let buttDel = document.createElement('button');
+            component.className = 'doingDel';
+            buttDel.innerHTML = 'X';
+
+            let buttMovIzq = document.createElement('button');
+            component.className = 'doingMovIzq';
+            buttMov.innerHTML = '<';
+
+            let buttMovDer = document.createElement('button');
+            component.className = 'doingMovDer';
+            buttMov.innerHTML = '>';
+
+            doing.appendChild(actDoing);
+            doing.appendChild(buttDel);
+            doing.appendChild(buttMovIzq);
+            doing.appendChild(buttMovDer);
+
+            break;
+
+        case 'done':
+
+            let done = document.createElement('div');
+            component.className = 'done';
+
+            let actDone = document.createElement('div');
+            actDone.innerHTML(this.tareas.actividad);
+
+            let buttDel = document.createElement('button');
+            component.className = 'doneDel';
+            buttDel.innerHTML = 'X';
+
+            let buttMovIzq = document.createElement('button');
+            component.className = 'doneMovIzq';
+            buttMov.innerHTML = '<';
+
+            doing.appendChild(actDoing);
+            doing.appendChild(buttDel);
+            doing.appendChild(buttMovIzq);
+
+            break;
+
+    }
+
+    
+
+    return component;
+}
+
+
+}
+</script>
+<script src='js/index.js'></script>
+
