@@ -26,6 +26,7 @@
 
 #celdas {
 
+    height: 4em;
     margin: 2em 6em 2em 6em;
     position: relative;
 
@@ -45,7 +46,7 @@
 
     color: rgb(240  , 240, 240);
     background-color: rgb(0, 158, 250);
-    border-color: rgb(0, 37, 58);
+    border: 3px solid rgb(2, 104, 163);
 }
 
 #celdaDos {
@@ -65,7 +66,7 @@
 
     color: rgb(240  , 240, 240);
     background-color: rgb(0, 158, 250);
-    border-color: rgb(0, 37, 58);
+    border: 3px solid rgb(2, 104, 163);
 
 }
 
@@ -83,6 +84,120 @@
 
     color: rgb(240  , 240, 240);
     background-color: rgb(0, 158, 250);
-    border-color: rgb(0, 37, 58);
+    border: 3px solid rgb(2, 104, 163);
+
+}
+
+.disTareas {
+
+    height: 4em;
+    margin: 2em 6em 2em 6em;
+    position: relative;
+
+}
+
+.borrarButton {
+
+    position: absolute;
+
+    width: 10px;
+    height: 15px;
+    right: 10px;
+    top: 10px;
+
+    color: rgb(114, 1, 1);
+    background-color: rgb(143, 27, 27);
+    border-color: rgb(114, 1, 1);
+
+}
+
+.MovIzqButton {
+
+    position: absolute;
+
+    width: 10px;
+    height: 15px;
+    left: 10px;
+    bottom: 10px;
+
+    color: rgb(168, 58, 8);
+    background-color: rgb(206, 65, 0);
+    border-color: rgb(168, 58, 8);
+
+
+}
+
+.MovDerButton {
+
+    position: absolute;
+
+    width: 10px;
+    height: 15px;
+    right: 10px;
+    bottom: 10px;
+
+    color: rgb(38, 121, 6);
+    background-color: rgb(57, 189, 4);
+    border-color: rgb(38, 121, 6);
+
+}
+
+.toDo  {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+
+    width: 15em;
+    height: 5em;
+    left: 0em;
+    top: 0em;
+    margin: 0em 0em 2em 0em;
+
+    color: rgb(36, 36, 36);
+    background-color: rgb(241, 243, 245);
+    border: 3px solid rgb(206, 209, 212);
+
+}
+
+.doing  {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+
+    width: 15em;
+    height: 5em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 0em;
+    margin: 0em 0em 2em 0em;
+
+    color: rgb(36, 36, 36);
+    background-color: rgb(241, 243, 245);
+    border: 3px solid rgb(206, 209, 212);
+
+}
+
+.done  {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+
+    width: 15em;
+    height: 5em;
+    right: 0em;
+    top: 0em;
+    margin: 0em 0em 2em 0em;
+
+    color: rgb(36, 36, 36);
+    background-color: rgb(241, 243, 245);
+    border: 3px solid rgb(206, 209, 212);
 
 }

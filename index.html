@@ -10,7 +10,7 @@
 
 <div id="creacionDeTarea">
 
-    <h1 id="titulo">Global Solution S.A.S</h1>
+    <h1 id="titulo">Agenda Web Libre</h1>
     <input id="descripcion" placeholder="descripción de la actividad" type="text">
     <button id="saveDescripcion">Nueva Tarea</button>
     
@@ -21,14 +21,14 @@
 
 <div id="celdaUno">
 
-    <h3 id = "toDo">To do</h3>
+    <h3 id = "toDoBars">To do</h3>
     <canvas></canvas>
 
 </div>
 
 <div id="celdaDos">
 
-    <h3 id="toDo">Doing</h3>
+    <h3 id="doingBars">Doing</h3>
     <canvas></canvas>
 
 
@@ -36,11 +36,15 @@
 
 <div id="celdaTres">
 
-    <h3 id="toDo">Done</h3>
+    <h3 id="doneBars">Done</h3>
     <canvas></canvas>
 
 
 </div>
+
+</div>
+
+<div id = "apartadoActividades">
 
 </div>
     
@@ -64,103 +68,6 @@
   firebase.initializeApp(firebaseConfig);
 </script>
 
-<script>
-    class Tarea {
-
-constructor(tareas){
-    
-    this.tareas = tareas;
-    
-}
-
-render = ()=> {
-
-    let component = document.createElement('div');
-    component.className = 'disTareas';
-
-    let listas = document.createElement('div');
-
-    switch(this.tareas.tipo){
-
-        case 'toDo':
-
-            let doTo = document.createElement('div');
-            component.className = 'doTo';
-
-            let actDoTo = document.createElement('div');
-            actDoTo.innerHTML(this.tareas.actividad);
-
-            let buttDel = document.createElement('button');
-            component.className = 'toDoDel';
-            buttDel.innerHTML = 'X';
-
-            let buttMov = document.createElement('button');
-            component.className = 'toDoMov';
-            buttMov.innerHTML = '>';
-
-            doTo.appendChild(actDoTo);
-            doTo.appendChild(buttDel);
-            doTo.appendChild(buttMov);
-
-            break;
-
-        case 'doing':
-            let doing = document.createElement('div');
-            component.className = 'doing';
-
-            let actDoing = document.createElement('div');
-            actDoTo.innerHTML(this.tareas.actividad);
-
-            let buttDel = document.createElement('button');
-            component.className = 'doingDel';
-            buttDel.innerHTML = 'X';
-
-            let buttMovIzq = document.createElement('button');
-            component.className = 'doingMovIzq';
-            buttMov.innerHTML = '<';
-
-            let buttMovDer = document.createElement('button');
-            component.className = 'doingMovDer';
-            buttMov.innerHTML = '>';
-
-            doing.appendChild(actDoing);
-            doing.appendChild(buttDel);
-            doing.appendChild(buttMovIzq);
-            doing.appendChild(buttMovDer);
-
-            break;
-
-        case 'done':
-
-            let done = document.createElement('div');
-            component.className = 'done';
-
-            let actDone = document.createElement('div');
-            actDone.innerHTML(this.tareas.actividad);
-
-            let buttDel = document.createElement('button');
-            component.className = 'doneDel';
-            buttDel.innerHTML = 'X';
-
-            let buttMovIzq = document.createElement('button');
-            component.className = 'doneMovIzq';
-            buttMov.innerHTML = '<';
-
-            doing.appendChild(actDoing);
-            doing.appendChild(buttDel);
-            doing.appendChild(buttMovIzq);
-
-            break;
-
-    }
-
-    
-
-    return component;
-}
-
-
-}
-</script>
+<script src='components/Tarea.js'></script>
 <script src='js/index.js'></script>
 

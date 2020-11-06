@@ -1,6 +1,7 @@
 const descripcion = document.getElementById('descripcion');
 const guardar = document.getElementById('saveDescripcion');
-const actividades = document.getElementById('disTareas')
+
+const apartadoActividades = document.getElementById('apartadoActividades')
 
 const database = firebase.database();
 
@@ -30,14 +31,15 @@ guardar.addEventListener('click',guardarTarea);
 
 database.ref('QuizDos/Actividades').on('value',function(data){
 
-    //actividades.innerHTML = '';
+    apartadoActividades.innerHTML = '';
 
     data.forEach(
-        tareas => {
+        
+        task => {
 
-            let valor = tareas.val();
-            let disActividades = new Tarea(valor);
-            actividades.appendChild(disActividades.render());
+            let valor = task.val();
+            let actividad = new Tarea(valor);
+            apartadoActividades.appendChild(actividad.render());
         
     });
 
